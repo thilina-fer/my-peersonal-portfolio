@@ -220,3 +220,88 @@ nav{
                 transform: translate(-20px, 20px) scale(0.9);
             }
         }
+
+
+.hero-content-1{
+    font-size: 25px;
+    top: 300px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    position: absolute; 
+    color: var(--menu-color);
+}
+
+.hero-content-2{
+    font-size: 18px;
+    top: 330px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    position: absolute; 
+    color: var(--menu-color);
+}
+
+
+.button-1{
+    width: 200px;
+    height: 50px;
+    background: var(--body-bg);
+    border: none;
+    opacity: 0.8;
+    top: 370px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    font-weight: bold;
+    color: var(--menu-color);
+}
+
+.button-1:hover{
+    animation-name: btn;
+    animation-duration: 2000ms;
+}
+
+@keyframes btn{
+    from{
+        background-color:#a78bfa ;
+        border: 5px solid #667eea;
+    }
+    to{
+        border: 5px solid #a78bfa;
+        border-radius: 10px;
+        width: 250px;
+        height: 80px;
+        font-size: 20px;
+    }
+}
+
+
+.title-about-me{
+    color: var(--menu-color);
+    width: fit-content;
+    height: fit-content;
+    top: 750px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    animation-name: title;
+    animation-duration: 2000ms;
+}
+
+@keyframes title{
+    from{
+        font-size: 10px;
+      
+    }
+    to{
+        font-size: 30px;
+      
+    }
+}
