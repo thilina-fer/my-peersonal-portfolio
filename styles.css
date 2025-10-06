@@ -9,14 +9,14 @@
     --body-bg: linear-gradient(90deg, #fff1f0 0%, #e9d5ff 50%, #c7d2fe 100%);
     --nav-bg: #adb5bd;
     --logo-color: #343a40;
-    --menu-color: white;
+    --menu-color: #343a40;
     --menu-hover-color: #667eea;
 }
 
 body.dark-mode {
     /* Dark theme colors */
-    --body-bg: linear-gradient(135deg, #1e1e2f 0%, #4b3f72 50%, #2563eb 100%);
-    --nav-bg: #111827;
+    --body-bg: linear-gradient(90deg, #000000 0%, #0a0a1a 50%, #0d1520 100%);
+    --nav-bg: #0a0a0a;
     --logo-color: #f8fafc;
     --menu-color: #f8fafc;
     --menu-hover-color: #a78bfa;
@@ -29,7 +29,7 @@ body{
 }
 
 nav{
-    background: #adb5bd;
+    background: var(--nav-bg);
     position: sticky;
     top: 0;
     z-index: 1;
@@ -87,7 +87,8 @@ nav{
         }
 
          .menu a:hover {
-            color: #667eea;
+            color: white;
+            
         }
 
         .menu a:hover::after {
@@ -167,3 +168,55 @@ nav{
         transform: rotate(315deg) translate(8px,-8px);
     }
 }
+
+.section1{
+    background:#3b82f6;
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    animation-delay: 2s;
+    border-radius: 100%;
+    opacity: 0.1;
+    animation: float 20s infinite ease-in-out;
+    left: -50px;
+    top: -50px;
+}
+
+
+.section2{
+    background:#3b82f6;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    animation-delay: 2s;
+    border-radius: 100%;
+    opacity: 0.1;
+    animation: float 20s infinite ease-in-out;
+    right: -100px;
+    top: 500px;
+}
+
+.section3{
+    background:#3b82f6;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    animation-delay: 2s;
+    border-radius: 100%;
+    opacity: 0.1;
+    animation: float 20s infinite ease-in-out;
+    right: -20px;
+    top: 350px;
+}
+
+@keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            33% {
+                transform: translate(30px, -30px) scale(1.1);
+            }
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+        }
