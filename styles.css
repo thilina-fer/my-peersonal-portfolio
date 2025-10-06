@@ -8,8 +8,8 @@
     /* Light theme colors */
     --body-bg: linear-gradient(90deg, #fff1f0 0%, #e9d5ff 50%, #c7d2fe 100%);
     --nav-bg: #adb5bd;
-    --logo-color: #343a40;
-    --menu-color: #343a40;
+    --logo-color: black;
+    --menu-color: black;
     --menu-hover-color: #667eea;
 }
 
@@ -253,7 +253,7 @@ nav{
     background: var(--body-bg);
     border: none;
     opacity: 0.8;
-    top: 370px;
+    top: 400px;
     right: 0;
     left: 0;
     margin: auto;
@@ -302,6 +302,10 @@ nav{
     }
     to{
         font-size: 30px;
-      
     }
+}
+
+.about{
+    top: 800px;
+    position: absolute;
 }
