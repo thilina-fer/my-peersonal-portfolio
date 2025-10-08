@@ -23,6 +23,8 @@
   );
   --button-border: #333333;
   --button-hover: #8b5cf6;
+  --content-color: black;
+  --content-font:"Shadows Into Light Two", cursive;
 }
 
 body.dark-theme {
@@ -49,6 +51,8 @@ body.dark-theme {
   );
   --button-border: #e4e4e7;
   --button-hover: #a78bfa;
+  --content-color: white;
+  --content-font: "Shadows Into Light Two", cursive;
 }
 
 /* Base Styles */
@@ -334,7 +338,7 @@ nav {
   height: 100vh;
 }
 
-#circle {
+.circle {
   aspect-ratio: 1/1;
   position: absolute;
   animation-delay: 2s;
@@ -343,22 +347,22 @@ nav {
   animation: float 20s infinite ease-in-out;
 }
 
-.circle-1 {
+#circle-1 {
   width: clamp(11rem, 30vw, 30rem);
   background: #3b82f6;
   left: -3.125rem;
   top: -3.125rem;
 }
 
-.circle-2 {
+#circle-2 {
   width: clamp(10rem, 25vw, 30rem);
   background: #6f06b6;
   right: -6.25rem;
   top: 31.25rem;
 }
 
-.circle-3 {
-   width: clamp(8rem, 15vw, 20rem);
+#circle-3 {
+  width: clamp(8rem, 15vw, 20rem);
   background: #03a292;
   right: -1.25rem;
   top: 21.875rem;
@@ -376,3 +380,25 @@ nav {
     transform: translate(-1.25rem, 1.25rem) scale(0.9);
   }
 }
+
+.hero-content-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  gap: 1.5rem;
+}
+
+.hero-content-1 {
+  font-family: var(--content-font);
+  color: var(--content-color);
+   font-size: clamp(1rem, 3vw, 6rem);
+}
+
+.hero-content-2{
+  font-family: var(--content-font);
+  color: var(--content-color);
+   font-size: clamp(0.5rem, 1 .5vw, 4.5rem);
+}
+
