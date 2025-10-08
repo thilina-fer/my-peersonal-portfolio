@@ -11,6 +11,9 @@
   --logo-color: black;
   --menu-color: black;
   --menu-hover-color: #667eea;
+  --content-color: black;
+  --content-font: "Shadows Into Light Two", cursive;
+  --title: rgba(0, 70, 234, 0.47);
 }
 
 body.dark-mode {
@@ -20,6 +23,8 @@ body.dark-mode {
   --logo-color: #f8fafc;
   --menu-color: #f8fafc;
   --menu-hover-color: #a78bfa;
+  --content-color: white;
+  --title: rgba(133, 177, 188, 0.679);
 }
 
 body {
@@ -113,7 +118,6 @@ nav {
   display: flex;
 }
 
-
 /* .menu > #theme-toggle {
   display: none;
 } */
@@ -163,12 +167,10 @@ nav {
   transition: width 0.3s ease;
 } */
 
-
- 
- a:hover::after {
-   transform: translateX(0%);
-   animation: gradient-89 3s linear infinite;
- }
+a:hover::after {
+  transform: translateX(0%);
+  animation: gradient-89 3s linear infinite;
+}
 
 .menu a:hover {
   color: var(--menu-hover-color);
@@ -201,7 +203,7 @@ nav {
     top: 1rem;
   }
 
-  .navbar{
+  .navbar {
     flex-direction: row-reverse;
   }
 
@@ -269,4 +271,220 @@ nav {
   .menu > li:nth-child(3) {
     display: none;
   }
+
+  /*////////////////////////////////////////////*/
+  .content-about {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .pic-background {
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    margin: 0 auto;
+  }
+
+  .content-about-text {
+    flex: auto;
+    margin-right: 0;
+    font-size: 1em;
+  }
+
+  .title {
+    font-size: 2em;
+  }
+}
+
+.main-content-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.main-content-1 {
+  color: var(--content-color);
+  font-family: var(--content-font);
+  font-size: clamp(1rem, 3vw, 6rem);
+  font-weight: bold;
+}
+
+.main-content-2 {
+  color: var(--content-color);
+  font-family: var(--content-font);
+  font-size: clamp(0.5rem, 1.5vw, 6rem);
+}
+
+/* Download cv button */
+.button {
+  width: 200px;
+  height: 40px;
+  background: #1163ff;
+  position: relative;
+  text-align: center;
+  border-radius: 0.45em;
+  font-family: "Arial";
+  transition: background 0.3s;
+}
+
+.button::before {
+  position: absolute;
+  font-size: 0.9rem;
+  color: #111;
+  border-radius: 0.25em;
+}
+
+.button::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  left: calc(50% - 10px);
+}
+
+.button::after,
+.button::before {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-wrapper,
+.text,
+.icon {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  color: #fff;
+}
+
+.text {
+  top: 0;
+}
+
+.text,
+.icon {
+  transition: top 0.5s;
+}
+
+.icon {
+  color: #fff;
+  top: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.button:hover {
+  background: #6c18ff;
+}
+
+.button:hover .text {
+  top: -100%;
+}
+
+.button:hover .icon {
+  top: 0;
+}
+
+.button:hover:before,
+.button:hover:after {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* About me section */
+/* 
+.main-content-about{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  position: relative;
+  left: 75px;
+  width: fit-content;
+}
+.title {
+  color: var(--title);
+  font-family: var(--content-font);
+  font-size: clamp(0.5rem, 1.5vw, 6rem);
+}
+
+.content-about{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: fit-content;
+} */
+/* 
+.content-about-text{
+  color: var(--content-color);
+  font-family: var(--content-font);
+  line-height: 2rem;
+  font-size: clamp(0.3rem, 1.vw, 6rem);
+  display: flex;
+
+}
+.pic-background{
+  width: clamp(10rem, 15vw, 30rem);
+  aspect-ratio: 1/1;
+  background-color: #c7d2fe;
+} */
+
+.main-content-about {
+  margin-bottom: 30px;
+}
+
+.title {
+  font-size: 2.5em;
+  color: #1a73e8;
+  display: flex;
+  align-items: center;
+  
+}
+
+
+.title img {
+  height: 30px;
+  margin-right: 10px;
+}
+
+.content-about {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.content-about-text {
+  flex: 2;
+  white-space: pre-wrap;
+  font-family: var(--content-font);
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: var(--content-color);
+}
+
+.pic-background {
+  width: clamp(8rem, 20vw, 20rem);
+  aspect-ratio: 1/1;
+  flex-shrink: 0;
+  background-color: #e0f2f1;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
