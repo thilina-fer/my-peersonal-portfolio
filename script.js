@@ -1,26 +1,24 @@
-// Theme toggle button functionality
-const toggleBtn = document.getElementById("theme-toggle");
-document.body.classList.toggle("dark-mode");
-// setLogo("NiGHT");
+// Theme Toggle
+const themeToggle = document.getElementById('theme-toggle');
+const icon = themeToggle.querySelector('.icon');
 
-toggleBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-
-  // Switch icon between light and dark
-  if (document.body.classList.contains("dark-mode")) {
-    toggleBtn.textContent = "☀️";
-    setLogo("NiGHT");
+// Toggle theme
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-theme');
+  
+  if (document.body.classList.contains('dark-theme')) {
+    icon.textContent = '☀️';
   } else {
-    toggleBtn.textContent = "🌙";
-    setLogo("DAY");
+    icon.textContent = '🌙';
   }
 });
 
-function setLogo(type) {
-  const logo = document.getElementsByClassName("mylogo")[0];
-  if (type === "DAY") {
-    logo.setAttribute("src", "/assets/image/whiteBG.png");
-  } else {
-    logo.setAttribute("src", "/assets/image/blackBG.png");
-  }
-}
+// Close mobile menu when clicking menu items
+const menuLinks = document.querySelectorAll('.menu a');
+const burgerIcon = document.getElementById('burger-icon');
+
+menuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    burgerIcon.checked = false;
+  });
+});
