@@ -377,7 +377,7 @@ nav {
   margin-bottom: 50px;
 }
 
-.about-content {
+.about-content > p {
   font-family: var(--content-font);
   color: var(--content-color);
   font-size: clamp(0.8rem, 1.2vw, 2.5rem);
@@ -386,13 +386,20 @@ nav {
   padding: 0 30px 0 30px;
 }
 
+.about-content{
+  display: flex;
+  align-items: center;
+}
+
 .myImage {
-  width: clamp(10rem, 15vw, 20rem);
-  aspect-ratio: 1/1;
+  width: clamp(15rem, 20vw, 20rem);
+  aspect-ratio: 1/1;0
   border-radius: 8px;
 }
 
 .about-section {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -405,11 +412,61 @@ nav {
   overflow: hidden;
   width: 100%;
   height: 150vh;
+  z-index: -1;
 }
 
-.about-content span{
-  display: none;
+
+/* From Uiverse.io by vamsidevendrakumar */ 
+.card {
+  perspective: 1000px;
+  width: clamp(15rem, 20vw, 20rem);
+  aspect-ratio: 1/1;
 }
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.999s;
+  display: flex;
+  justify-content: center;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  backface-visibility: hidden;
+  width: fit-content;
+  height: fit-content;
+}
+
+.card-front {
+  background-color: #6A2C70;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  background-color: #F08A5D;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 24px;
+  transform: rotateY(180deg);
+}
+
 
 /* Tablet Styles */
 @media (max-width: 720px) {
@@ -440,6 +497,10 @@ nav {
   .title {
     margin-bottom:25px;
   }
+
+  .about-content span{
+  display: none;
+}
 }
 
 /* Mobile Styles */
