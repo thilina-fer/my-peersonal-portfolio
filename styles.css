@@ -331,7 +331,7 @@ nav {
   }
 }
 
-.background-circles {
+.hero {
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -419,12 +419,9 @@ nav {
   gap: 8px;
   cursor: pointer;
   border-radius: 8px;
-  transition: 
-    background-color 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
-    transform 0.4s ease-in-out,
-    width 0.4s ease-in-out,
-    padding 0.4s ease-in-out;
-    position: relative;
+  transition: background-color 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
+    transform 0.4s ease-in-out, width 0.4s ease-in-out, padding 0.4s ease-in-out;
+  position: relative;
 }
 
 /* Text Animation */
@@ -434,10 +431,8 @@ nav {
   opacity: 0;
   /* left: -100px; */
   transform: translateX(-10px);
-  transition: 
-    opacity 0.6s ease-in-out,
-    transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
-    color 0.4s ease-in-out;
+  transition: opacity 0.6s ease-in-out,
+    transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), color 0.4s ease-in-out;
   color: #000;
   font-size: clamp(0.9rem, 1.5vw, 1.2rem);
 }
@@ -445,14 +440,15 @@ nav {
 /* Icon Animation */
 .socilal-logo i {
   position: ;
-  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), color 0.4s ease-in-out;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1),
+    color 0.4s ease-in-out;
 }
 
 /* Hover State */
 .socilal-logo:hover {
   width: fit-content;
   padding: 0px 110px 0px 10px;
-  transition:transform all 2s ;
+  transition: transform all 2s;
 }
 
 /* Smooth text fade-in */
@@ -466,7 +462,6 @@ nav {
 .socilal-logo:hover i {
   transform: translateX(-5px);
   width: fit-content;
-
 }
 
 /* === Brand-specific hover colors === */
@@ -478,9 +473,44 @@ nav {
   background-color: #1877f2; /* Facebook blue */
 }
 
+.button-div {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 10px;
+}
 
-.button-div{
- display: grid;
-  grid-template-columns: auto auto auto auto ;
- gap: 10px;
+/*======= About Me Section ========*/
+.title-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  font-family: var(--content-font);
+  color: var(--content-color);
+  font-size: clamp(0.5rem, 2.5vw, 4rem);
+}
+
+.about-content {
+  font-family: var(--content-font);
+  color: var(--content-color);
+  font-size: clamp(0.2rem, 1.2vw, 2.5rem);
+  letter-spacing: 2px;
+  text-align: left;
+}
+
+.myImage{
+  width: clamp(2rem , 15vw , 20rem);
+  aspect-ratio: 1/1;
+  border-radius: 8px;
+}
+
+.about-section{
+  display: flex;
+  /* justify-content: space-around; */
+  flex-direction:row;
+  justify-content: space-around;
+  align-items: left;
 }
