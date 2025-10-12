@@ -1,6 +1,6 @@
-// Theme Toggle
 const themeToggle = document.getElementById('theme-toggle');
 const icon = themeToggle.querySelector('.icon');
+ document.body.classList.toggle('dark-theme');
 
 // Toggle theme
 themeToggle.addEventListener('click', () => {
@@ -13,81 +13,63 @@ themeToggle.addEventListener('click', () => {
   }
 });
 
-// Close mobile menu when clicking menu items
-const menuLinks = document.querySelectorAll('.menu a');
-const burgerIcon = document.getElementById('burger-icon');
+const lines = [
+  "I'm always exploring new ways to grow as a developer.",
+  "I love turning creative ideas into real time projects."
+];
 
-menuLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    burgerIcon.checked = false;
-  });
-});
+const el1 = document.getElementById("typing-text-1");
+const el2 = document.getElementById("typing-text-2");
 
-// //////////////////////////////
-document.addEventListener('DOMContentLoaded', () => {
-    const track = document.querySelector('.carousel-track');
-    const slides = Array.from(track.children);
-    const nextButton = document.querySelector('.next-button');
-    const prevButton = document.querySelector('.prev-button');
-    const nav = document.querySelector('.carousel-nav');
+let lineIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let activeElement = el1;
 
-    if (slides.length === 0) return; // Exit if there are no slides
+const typingSpeed = 100;
+const eraseSpeed = 60;
+const pauseTime = 1200;
 
-    // Get the width of a single slide
-    const slideWidth = slides[0].getBoundingClientRect().width;
+function type() {
+  const currentLine = lines[lineIndex];
+  activeElement.textContent = currentLine.substring(0, charIndex);
 
-    // --- Create Navigation Dots ---
-    slides.forEach((slide, index) => {
-        const dot = document.createElement('button');
-        dot.classList.add('nav-dot');
-        if (index === 0) dot.classList.add('active'); // Set first dot as active
-        
-        dot.addEventListener('click', () => {
-            moveToSlide(index);
-        });
-        nav.appendChild(dot);
-    });
+  if (!isDeleting && charIndex < currentLine.length) {
+    charIndex++;
+    setTimeout(type, typingSpeed);
+  } 
+  else if (isDeleting && charIndex > 0) {
+    charIndex--;
+    setTimeout(type, eraseSpeed);
+  } 
+  else {
+    if (!isDeleting) {
+      isDeleting = true;
+      setTimeout(type, pauseTime);
+    } else {
+      isDeleting = false;
+      charIndex = 0;
+      activeElement.textContent = "";
+      
+      // Switch between line 1 and 2
+      if (lineIndex === 0) {
+        activeElement = el2;
+      } else {
+        activeElement = el1;
+      }
+      
+      lineIndex = (lineIndex + 1) % lines.length;
+      setTimeout(type, 500);
+    }
+  }
+}
 
-    const dots = Array.from(nav.children);
-    let currentIndex = 0;
+type();
 
-    // --- Function to move to a specific slide ---
-    const moveToSlide = (targetIndex) => {
-        // Check bounds
-        if (targetIndex >= slides.length) {
-            targetIndex = 0;
-        }
-        if (targetIndex < 0) {
-            targetIndex = slides.length - 1;
-        }
-
-        track.style.transform = 'translateX(-' + slideWidth * targetIndex + 'px)';
-        
-        // Update active dot
-        if (dots.length > 0) {
-            dots[currentIndex].classList.remove('active');
-            dots[targetIndex].classList.add('active');
-        }
-
-        currentIndex = targetIndex;
-    };
-
-    // --- Button Event Listeners ---
-    nextButton.addEventListener('click', () => {
-        moveToSlide(currentIndex + 1);
-    });
-
-    prevButton.addEventListener('click', () => {
-        moveToSlide(currentIndex - 1);
-    });
-    
-    // --- Recalculate slide width on window resize for responsiveness ---
-    window.addEventListener('resize', () => {
-        const newSlideWidth = slides[0].getBoundingClientRect().width;
-        track.style.transition = 'none'; // Disable transition during resize
-        track.style.transform = 'translateX(-' + newSlideWidth * currentIndex + 'px)';
-        setTimeout(() => {
-            track.style.transition = 'transform 0.5s ease-in-out'; // Re-enable after a moment
-        }, 10);
-    });
-});
+if (window.innerWidth >= 480) {
+  type(); // Run typing only on desktop
+} else {
+  // Just show static text for mobile
+  el1.textContent = "I'm always exploring new ways to grow as a developer.";
+  el2.textContent = "I love turning creative ideas into real projects.";
+}

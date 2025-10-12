@@ -3,305 +3,106 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Personal Portfolio</title>
-
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Russo+One&family=Shadows+Into+Light+Two&display=swap"
-      rel="stylesheet"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    />
-
-    <link rel="stylesheet" href="styles.css" />
-
-    <link rel="stylesheet" href="assests/lib/normalize.css" />
+      href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap"
+      rel="stylesheet"/>
+      <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
   </head>
   <body>
-    <nav>
-      <div class="navbar">
-        <input type="checkbox" id="burger-icon" />
-
-        <label for="burger-icon" class="responsive-menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-
-        <ul class="menu">
-          <li><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#">Works</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-
-        <button id="theme-toggle" aria-label="Toggle dark and light theme">
-          <span class="icon">🌙</span>
-        </button>
-      </div>
-    </nav>
-
-    <div class="bg-circle">
-      <div id="circle-1" class="circle"></div>
-      <div id="circle-2" class="circle"></div>
-      <div id="circle-3" class="circle"></div>
+    <!-- =============== BACKGROUND ANIMATION =============== -->
+    <div class="background-shapes">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
 
-    <section class="hero">
-      <div>
-        <div class="hero-content-div">
-          <p class="hero-content-1">Hello I’m " Thilina Dilshan ".</p>
-          <pre class="hero-content-2">
-  " I enjoy working with Java and web technologies, 
-                             and
-                I'm always exploring new ways to grow as a developer."
-         </pre
-          >
-          <div class="button-div">
-            <div class="socilal-logo github">
-              <i class="fa-brands fa-github fa-2xl"></i>
-              <span>Github</span>
-            </div>
-            <div class="socilal-logo facebook">
-              <i
-                class="fa-brands fa-facebook fa-2xl"
-                style="color: #0400ff"
-              ></i>
-              <span>Facebook</span>
-            </div>
+    <!-- =============== NAVIGATION BAR =============== -->
+    <section class="navbar-section">
+      <nav>
+        <div class="navbar">
+          <input type="checkbox" id="burger-icon" />
+          <label for="burger-icon" class="responsive-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
 
-            <div class="socilal-logo youtube">
-             <i class="fa-brands fa-youtube fa-2xl style="
-             style="color: red;" >
-            </i>
-              <span>Youtube</span>
-            </div>
-
-            <div class="socilal-logo linkdin">
-              <i class="fa-brands fa-linkedin fa-2xl" 
-              style="color: #005eff;">
-              </i>
-              <span>linkdin</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="title-div">
-        <h1 class="title">&odot; Who I am</h1>
-      </div>
-      <div>
-        <div class="about-section">
-          <div class="about-content">
-            <p>
-              Hi! I'm <strong>Thilina Dilshan</strong>, a
-              <strong>Sri Lankan</strong> software engineer <br />
-              driven by the pure joy of creation. <br /><br />
-
-              My specialty lies in Java, where I combine robust backend logic
-              <br />
-              with the beautiful, fluid design capabilities of JavaFX.
-              <br /><br />
-
-              <span>
-                I view software as an art, aiming to engineer applications that
-                are <br />
-                not just functional, but genuinely intuitive and deeply engaging
-                <br />
-                for every user.
-              </span>
-            </p>
-          </div>
-          <div class="card">
-            <div class="card-inner">
-              <div class="card-front">
-                <img src="assests//image/me.jpg" class="myImage" />
-              </div>
-              <div class="card-back">
-                <img src="assests/image/me2.jpg" class="myImage" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="cv-button">
-          <div class="button">
-            <div class="button-wrapper">
-              <div class="text">Download</div>
-              <span class="icon-1">
-                <img src="assests/image/download.png" alt="" />
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======== Education ======== -->
-    <section id="education">
-      <div class="title-div">
-        <h1 class="title">&odot; My Education</h1>
-      </div>
-      <div class="education-outer-div">
-        <div class="edu-inner-div">
-          <h3 class="edu-title">
-            <i class="fa-duotone fa-solid fa-user-graduate fa-sm"></i> GCE O/L
-            Examination
-          </h3>
-          <p class="edu-description">
-            I successfully passed all subjects in my Ordinary Level
-            examinations. I studied at Dharmapala College Bandarawela.
-          </p>
-        </div>
-
-        <div class="edu-inner-div">
-          <h3 class="edu-title">
-            <i class="fa-duotone fa-solid fa-user-graduate fa-sm"></i> GCE A/L
-            Examination
-          </h3>
-          <p class="edu-description">
-            I successfully passed all subjects in my Advanced Level examinations
-            on Physical Science Stream. I also studied at Dharmapala College
-            Bandarawela.
-          </p>
-        </div>
-
-        <div class="edu-inner-div">
-          <h3 class="edu-title">
-            <i class="fa-duotone fa-solid fa-user-graduate fa-sm"></i> Higher
-            Education (Current)
-          </h3>
-          <p class="edu-description">
-            I enrolled in the Institute of Software Engineering (IJSE) to pursue
-            my degree and am committed to making the most of this journey.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== works ============ -->
-     <section>
-      <div class="title-div">
-        <h1 class="title">&odot; My Works</h1>
-      </div>
-      <div class="works"></div>
-     </section>
-
-     <!-- ========== Gallery ============ -->
-     <section>
-      <div class="title-div">
-        <h1 class="title">&odot; My Special Movements</h1>
-      </div>
-       <div class="gallery"></div>
-     </section>
-
-    <!-- ================== Get in touch ================== -->
-    <section id="contact" class="contact-section">
-      <h2 class="title">Get In Touch</h2>
-      <p class="contact-content">
-        Have a project you'd like to discuss? I'd love to hear from you. Fill
-        out the form below and I'll get back to you as soon as possible.
-      </p>
-
-      <form
-        id="contact-form"
-        action="https://formspree.io/f/your_unique_id"
-        method="POST"
-        class="contact-form"
-      >
-        <div class="form-group">
-          <label for="name" class="contact-content">Full Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Your Name"
-            required
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="email" class="contact-content">Email Address</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Your Email"
-            required
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="message" class="contact-content">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            rows="5"
-            placeholder="How can I help you?"
-            required
-          ></textarea>
-        </div>
-
-        <button type="submit" class="submit-button contact-content">
-          Send Message
-        </button>
-      </form>
-      <div class="social-icons">
-        <i class="fa-brands fa-github"></i>
-        <i class="fa-brands fa-whatsapp fa-lg"></i>
-        <i class="fa-brands fa-linkedin-in fa-lg"></i>
-        <i class="fa-brands fa-youtube fa-lg"></i>
-      </div>
-    </section>
-
-    <!-- ========== Footer ==========  -->
-    <footer class="footer-detailed">
-      <div class="footer-container">
-        <div class="footer-column">
-          <h3>Dilshan Thilina</h3>
-          <p>
-            A short tagline or mission statement about your work and passion.
-          </p>
-        </div>
-        <div class="footer-column">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about-me">About me</a></li>
-            <li><a href="works">Works</a></li>
+          <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#">Works</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
+
+          <button id="theme-toggle" aria-label="Toggle dark and light theme">
+            <span class="icon">🌙</span>
+          </button>
         </div>
-        <div class="footer-column">
-          <h3>Get in Touch</h3>
-          <div class="contact-info">
-            <p><i class="fas fa-map-marker-alt"></i> Panadura, Sri Lanka</p>
-            <p>
-              <i class="fas fa-envelope"></i
-              ><a href="mailto:dilshanthilina1010@gmail.com"
-                >dilshanthilina1010.com</a
-              >
-            </p>
-          </div>
-          <div class="social-media">
-            <a href="#" aria-label="LinkedIn"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          </div>
+      </nav>
+    </section>
+
+    <!-- =============== HERO SECTION =============== -->
+    <section class="hero-section">
+      <div class="scene">
+        <div class="cube" id="cube">
+          <div class="face front">JAVA</div>
+          <div class="face back">PYTHON</div>
+          <div class="face right">SQL</div>
+          <div class="face left">JSVASCRIPT</div>
+          <div class="face top">CSS</div>
+          <div class="face bottom">HTML</div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 dilahn thilina. Built with passion.</p>
+      <!-- <div class="hero-content-div">
+          <p class="hero-content-1">Hello I’m " Thilina Dilshan ".</p><br>
+          <p class="hero-content-2">I'm always exploring new ways to grow as a developer.</p><br>
+          <p class="hero-content-3">I love turning creative ideas into real projects.</p><br>
+      </div> -->
+
+      <div class="hero-content-div">
+    <p class="hero-content-1">Hello I’m " Thilina Dilshan ".</p><br>
+    <p class="hero-content-2" id="typing-text-1"></p><br>
+    <p class="hero-content-3" id="typing-text-2"></p><br>
+    <button class="Download-cv-button">Download <i class="fa-solid fa-circle-down fa-lg"></i></button>
+  </div>
+    </section>
+
+
+    <!-- =============== About ME SECTION =============== -->
+     <section id="about" class="about-section">
+  <div class="about-container">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+
+      <div class="about-image">
+        <img src="https://via.placeholder.com/350" alt="A photo of Thilina Dilshan" />
       </div>
-    </footer>
+
+      <div class="about-text">
+        <h3>Passionate Developer & Creative Problem-Solver</h3>
+        <p>
+          Hello! I'm Thilina Dilshan, a developer with a deep passion for building clean, efficient, and user-friendly web applications. My journey into programming started with a fascination for how ideas can be transformed into tangible, interactive experiences.
+        </p>
+        <p>
+          With a strong foundation in both front-end and back-end technologies, I enjoy every aspect of the development process. I'm proficient with languages like <strong>Java, Python, JavaScript, and SQL</strong>, and I love creating beautiful UIs with <strong>HTML & CSS</strong>.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+     
+   
 
     <script src="script.js"></script>
   </body>
