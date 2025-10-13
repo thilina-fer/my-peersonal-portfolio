@@ -7,8 +7,8 @@
   position: relative;
   z-index: 2;
   overflow-x: hidden;
-  padding: clamp(60px, 8vw, 100px) 20px; /* Added padding for spacing */
-  background-color: var(--body-bg); /* Assuming a dark background */
+  padding: clamp(60px, 8vw, 100px) 20px; 
+  background-color: var(--body-bg); 
 }
 
 .works-container {
@@ -17,12 +17,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 50px; /* Increased gap for better spacing */
+  gap: 50px;
 }
 
 .section-title {
   font-family: var(--text-primary);
-  color: #ccd6f6; /* Using a direct color */
+  color: var(--text-primary); 
   font-size: clamp(2.5rem, 5vw, 4rem);
   text-align: center;
   position: relative;
