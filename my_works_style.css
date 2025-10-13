@@ -1,3 +1,4 @@
+/* =============== WORKS SECTION =============== */
 .works-section {
   display: flex;
   justify-content: center;
@@ -6,6 +7,8 @@
   position: relative;
   z-index: 2;
   overflow-x: hidden;
+  padding: clamp(60px, 8vw, 100px) 20px; /* Added padding for spacing */
+  background-color: var(--body-bg); /* Assuming a dark background */
 }
 
 .works-container {
@@ -14,12 +17,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 50px; /* Increased gap for better spacing */
 }
 
 .section-title {
   font-family: var(--text-primary);
-  color: var(--content-color);
+  color: #ccd6f6; /* Using a direct color */
   font-size: clamp(2.5rem, 5vw, 4rem);
   text-align: center;
   position: relative;
@@ -38,51 +41,150 @@
   border-radius: 2px;
 }
 
-/* From Uiverse.io by Tiagoadag */ 
-/* From Uiverse.io by codebykay101 */ 
-.container {
-  position: relative;
+/* =============== CARD CONTAINER & CARDS =============== */
+.card-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap; /* Allows cards to wrap onto new lines */
+  gap: 40px; /* Controls spacing between cards */
 }
 
-.container .glass {
+.box {
   position: relative;
-  width: 180px;
-  height: 200px;
-  background: linear-gradient(#fff2, transparent);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.25);
+  width: 220px;
+  height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: 0.5s;
-  border-radius: 10px;
-  margin: 0 -45px;
-  backdrop-filter: blur(10px);
-  transform: rotate(calc(var(--r) * 1deg));
+  z-index: 1;
 }
 
-.container:hover .glass {
-  transform: rotate(0deg);
-  margin: 0 10px;
-}
-
-.container .glass::before {
-  content: attr(data-text);
+.box::before {
+  content: ' ';
   position: absolute;
+  top: 0;
+  left: 50px;
+  width: 50%;
+  height: 100%;
+  text-decoration: none;
+  background: linear-gradient(315deg, #652ca3, #f80158);
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 0.5s;
+}
+
+.box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50px; /* CORRECTED: Was '50' */
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(315deg, #652ca3, #f80158);
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 0.5s;
+  filter: blur(30px);
+}
+
+.box:hover:before,
+.box:hover:after {
+  transform: skewX(0deg) scaleX(1.3);
+}
+
+.box span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   bottom: 0;
-  width: 100%;
-  height: 40px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.box span::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: 40px;
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  opacity: 1;
+  transition: 0.1s;
+  animation: animate 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.box span::after {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  opacity: 1;
+  transition: 0.5s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  animation: animate 2s ease-in-out infinite;
+  animation-delay: -1s;
+}
+
+.box .content {
+  position: relative;
+  width: 190px;
+  height: 254px;
+  padding: 20px 40px;
   background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1;
+  transition: 0.5s; /* CORRECTED: Was 'transform' */
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
-}
-.container .glass svg {
-  font-size: 2.5em;
-  fill: #fff;
+  text-align: center;
 }
 
+.box .content h2 {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+@keyframes animate {
+  0%, 100% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* =============== RESPONSIVENESS (MEDIA QUERIES) =============== */
+@media (max-width: 768px) {
+  .card-container {
+    gap: 30px; /* Slightly reduce gap on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container {
+    flex-direction: column; /* Stack cards vertically on mobile */
+    gap: 50px; /* Increase vertical gap */
+  }
+
+  .box {
+    width: 250px; /* Make cards wider to be more touch-friendly */
+  }
+}
