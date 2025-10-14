@@ -37,6 +37,8 @@
   --shape-color: rgba(0, 0, 0, 0.06);
   --content-font-size: clamp(0.9rem, 1.5vw, 4.5rem);
   --edu-conatiner-color: #ffffff;
+  --footer-color: white;
+  --footer-content-color:black;
 }
 
 body.dark-theme {
@@ -68,10 +70,11 @@ body.dark-theme {
   --border-color: white;
 
   --contact-bg-color: #0000005e;
-  /* Added shape color for dark mode */
   --shape-color: rgba(255, 255, 255, 0.1);
   --content-font-size: clamp(0.9rem, 1.5vw, 4.5rem);
   --edu-conatiner-color: #0a192f;
+  --footer-color:#112240;
+  --footer-content-color:white;
 }
 
 body {

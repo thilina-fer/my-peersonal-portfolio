@@ -1,42 +1,82 @@
-/* --- SIMPLE FOOTER --- */
-/* .footer-sec{
-    z-index: 2  ;
-} */
-
-.site-footer {
-  background-color: #1a202c; /* Dark background */
-  color: #a0aec0; /* Light gray text color */
-  padding: 30px 20px;
-  text-align: center;
-  font-family: 'Segoe UI', sans-serif;
-  border-top: 1px solid #2d3748; /* Subtle separator line */
-  /* z-index: 2;     */
+.footer {
+    font-family: "Montserrat", sans-serif;
+    color: var(--footer-content-color);
+    background-color: var(--footer-color);
+    padding: 40px 5%;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
 }
 
-/* Container for social media icons */
-.footer-socials {
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 25px; /* Space between icons */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
 }
 
-/* Individual social media links */
-.footer-socials a {
-  color: #a0aec0; /* Icon color */
-  text-decoration: none;
-  font-size: 1.5rem; /* Icon size */
-  transition: color 0.3s ease, transform 0.3s ease;
+.footer-column {
+    flex: 1;
+    min-width: 220px;
 }
 
-/* Hover effect for icons */
-.footer-socials a:hover {
-  color: #64ffda; /* Accent color on hover */
-  transform: translateY(-3px); /* Lifts the icon slightly */
+.my-logo {
+    font-family: "Archivo Black", sans-serif;
+    font-size: 2rem;
+    margin-bottom: 15px;
 }
 
-/* Copyright text */
-.footer-copyright {
-  margin: 0;
-  font-size: 0.9rem;
+.footer-column h4 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+
+.quick-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+.quick-links li {
+    margin-bottom: 10px;
+}
+
+.footer a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    /* color: #ffffff; */
+    text-decoration: underline;
+}
+
+.social-links a {
+    margin-right: 15px;
+    font-size: 1.1rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-column {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }

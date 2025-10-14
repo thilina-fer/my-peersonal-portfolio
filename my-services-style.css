@@ -55,7 +55,7 @@
   flex-direction: column;
   gap: 20px;
   width: clamp(12rem, 78vw, 18rem);
-  height: 400px;
+  /* height: 400px; */
   padding: 10px;
   border-radius: 8px;
   background: var(--body-bg);
