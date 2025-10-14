@@ -1,0 +1,42 @@
+/* --- SIMPLE FOOTER --- */
+/* .footer-sec{
+    z-index: 2  ;
+} */
+
+.site-footer {
+  background-color: #1a202c; /* Dark background */
+  color: #a0aec0; /* Light gray text color */
+  padding: 30px 20px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  border-top: 1px solid #2d3748; /* Subtle separator line */
+  /* z-index: 2;     */
+}
+
+/* Container for social media icons */
+.footer-socials {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 25px; /* Space between icons */
+}
+
+/* Individual social media links */
+.footer-socials a {
+  color: #a0aec0; /* Icon color */
+  text-decoration: none;
+  font-size: 1.5rem; /* Icon size */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for icons */
+.footer-socials a:hover {
+  color: #64ffda; /* Accent color on hover */
+  transform: translateY(-3px); /* Lifts the icon slightly */
+}
+
+/* Copyright text */
+.footer-copyright {
+  margin: 0;
+  font-size: 0.9rem;
+}
